@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GetStatisticById OK",
+  "description": "Schema for response with code 200",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "likes": {
+        "type": "integer"
+      },
+      "viewCount": {
+        "type": "integer"
+      },
+      "contacts": {
+        "type": "integer"
+      }
+    },
+    "required": ["likes", "viewCount", "contacts"]
+  }
+}

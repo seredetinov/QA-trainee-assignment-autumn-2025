@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bad request",
+  "description": "Schema for response with code 400",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "messages": {
+          "type": "object"
+        }
+      }
+    },
+    "status": {
+      "const": "404"
+    }
+  },
+  "required": ["result", "status"]
+}

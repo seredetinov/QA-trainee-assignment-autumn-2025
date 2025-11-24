@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GetItemById & GetItemsBySellerId Success Response",
+  "description": "Schema for response with code 200 for GetItemById & GetItemsBySellerId",
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "sellerId": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "statistics": {
+          "type": "object",
+          "properties": {
+            "likes": {
+              "type": "integer"
+            },
+            "viewCount": {
+              "type": "integer"
+            },
+            "contacts": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "required": ["id", "sellerId", "name", "price", "createdAt", "statistics"]
+    }
+}

@@ -1,0 +1,25 @@
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/wrapper/maven-wrapper.jar
+
+*.log
+*.tmp
+*.temp
+temp/
+tmp/
+
+.DS_Store # macOS
+Thumbs.db # Windows
+desktop.ini # Windows

@@ -11,6 +11,7 @@ import java.util.Set;
 import static resources.utils.HttpMethod.GET;
 import static resources.utils.TestBase.*;
 
+@TestMethodOrder(MethodOrderer.DisplayName.class)
 @DisplayName("Получить все объявления по идентификатору продавца")
 public class GetItemsBySellerIdTest {
     static Object sellerID;
@@ -22,7 +23,7 @@ public class GetItemsBySellerIdTest {
     @DisplayName("Позитивные сценарии")
     class PositiveTest{
         @Test
-        @DisplayName("№9 | Получение объявлений по идентификатору существующего продавца")
+        @DisplayName("№09 | Получение объявлений по идентификатору существующего продавца")
         public void getItemsBySellerIdValidIdTest(){
             sellerID = 200225; //используется sellerID без объявлений на момент написания теста
                                 //при повторном запуске необходимо задать нового продавца без объявлений

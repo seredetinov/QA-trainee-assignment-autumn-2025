@@ -6,6 +6,7 @@ import resources.dto.Item;
 import static resources.utils.HttpMethod.GET;
 import static resources.utils.TestBase.*;
 
+@TestMethodOrder(MethodOrderer.DisplayName.class)
 @DisplayName("Получить объявления по его идентификатору")
 public class GetItemByIdTest {
     private final String endpoint = "/api/1/item/";
@@ -22,7 +23,7 @@ public class GetItemByIdTest {
         }
 
         @Test
-        @DisplayName("№1 | Получение существующего объявления")
+        @DisplayName("№01 | Получение существующего объявления")
         public void getItemByIdValidIdTest(){
           var response = sendRequestValidateResponse(endpoint + itemId, null, GET, 200, GET_ITEMS_OK_SCHEMA);
           Assertions.assertEquals(itemId, response.jsonPath().get("[0].id"),
@@ -30,7 +31,7 @@ public class GetItemByIdTest {
         }
 
         @Test
-        @DisplayName("№2 | Идемпотентность метода GET при повторном получении объявления")
+        @DisplayName("№02 | Идемпотентность метода GET при повторном получении объявления")
         public void getItemByIdIdempotencyTest(){
             String [] responses = new String[2];
             for (int i = 0; i <= 1; i++){
@@ -45,13 +46,13 @@ public class GetItemByIdTest {
     @DisplayName("Негативные сценарии")
     class NegativeTest{
         @Test
-        @DisplayName("№3 | Получение объявления без указания идентификатора")
+        @DisplayName("№03 | Получение объявления без указания идентификатора")
         public void getItemByIdNoIdTest(){
             sendRequestValidateResponse(endpoint, null,GET,404, null);
         }
 
         @Test
-        @DisplayName("№4 | Получение объявления по недопустимому значению идентификатора")
+        @DisplayName("№04 | Получение объявления по недопустимому значению идентификатора")
         public void getItemByIdInvalidIdTest(){
             sendRequestValidateResponse(endpoint + "false", null,GET,400, BAD_REQUEST_SCHEMA);
         }

@@ -10,6 +10,7 @@ import static resources.utils.HttpMethod.GET;
 import static resources.utils.HttpMethod.POST;
 import static resources.utils.TestBase.*;
 
+@TestMethodOrder(MethodOrderer.DisplayName.class)
 @DisplayName("Создать объявления")
 public class CreateItemTest {
     private final String endpoint = "/api/1/item";
